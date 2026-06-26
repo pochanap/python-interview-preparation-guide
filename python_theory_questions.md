@@ -1,4 +1,5 @@
-```python
+````python
+
 1. What is Python? Or Why Python?
 
    Python is a high-level, interpreted, object-oriented, dynamically typed programming language known for its simplicity and readability.
@@ -46,12 +47,38 @@
 
 7. Difference between list and tuple?
 
-   | List | Tuple |
-   | ----------- | ----------- |
-   | Mutable | Immutable |
-   | [] | () |
-   | Slower | Faster |
-   | More memory | Less memory |
+| List | Tuple |
+|------|-------|
+| List is mutable (elements can be added, removed, or modified). | Tuple is immutable (cannot be changed after creation). |
+| Represented using square brackets `[]`. | Represented using parentheses `()`. |
+| Supports many built-in methods like `append()`, `extend()`, `insert()`, `remove()`, `pop()`, and `sort()`. | Supports only two built-in methods: `count()` and `index()`. |
+| Slightly slower because it is mutable. | Slightly faster because it is immutable. |
+| Uses more memory. | Uses less memory. |
+| Cannot be used as a dictionary key because it is mutable. | Can be used as a dictionary key if all its elements are hashable. |
+| Best for data that changes frequently. | Best for fixed or constant data. |
+
+### Similarities
+- Both are ordered collections.
+- Both allow duplicate elements.
+- Both can store heterogeneous (different) data types.
+- Both support indexing and slicing.
+- Both can be nested.
+
+### Example
+```python
+# List
+fruits = ["apple", "banana", "mango"]
+fruits.append("orange")
+fruits[0] = "grapes"
+print(fruits)
+
+# Tuple
+numbers = (1, 2, 3)
+print(numbers)
+
+# numbers[0] = 10      # TypeError
+# numbers.append(4)    # AttributeError
+````
 
 8. Why use tuple?
 
@@ -73,9 +100,9 @@
 - `*args` collects variable positional arguments into a tuple.
 - `**kwargs` collects variable keyword arguments into a dictionary.
 
-def fun(*args, **kwargs):
-    print(args)
-    print(kwargs)
+def fun(\*args, \*\*kwargs):
+print(args)
+print(kwargs)
 
 12. What is a lambda function?
 
@@ -125,15 +152,15 @@ def fun(*args, **kwargs):
     Decorators are functions that modify or extend the behavior of another function without changing its original code. They are commonly used for logging, authentication, caching, and measuring execution time.
     Example:
     def decorator(func):
-        def wrapper():
-            print("Before")
-            func()
-            print("After")
-        return wrapper
+    def wrapper():
+    print("Before")
+    func()
+    print("After")
+    return wrapper
 
     @decorator
     def greet():
-        print("Hello")
+    print("Hello")
 
 21. What is memory management in Python?
 
@@ -141,4 +168,7 @@ def fun(*args, **kwargs):
     - Private heap space
     - Garbage collection
     - Reference counting
+
+```
+
 ```
